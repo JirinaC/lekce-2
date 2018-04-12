@@ -1,5 +1,13 @@
 <!doctype html>
 <html lang="en">
+     <?php
+  $text = 'Ahoj'; 
+  $text2 = 'Jiřinko';
+  $cislo = 5;
+  $cislo = $cislo + 5;
+  $pole2 = ['jmeno' => 'Jiřina', 'prijmeni' => 'Čepičková'];
+  
+?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +27,7 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#"><?php echo $cislo ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -54,13 +62,12 @@
     <main role="main" class="container">
 
       <div class="starter-template">
-        <h1>
-<?php
-  echo 'Centrální obrazovka všehomíra';
+     
+        <h1><?php echo $text?> <?php echo $pole2['jmeno'].' '.$pole2['prijmeni']?></h1>
 
-?>
-        </h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+       
+        <p class="lead">Jsem z toho jelen. <?php var_dump ($pole2)?><br> Uplně.</p>
+         
       </div>
 
     </main><!-- /.container -->
