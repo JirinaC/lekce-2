@@ -6,6 +6,9 @@
   $cislo = 5;
   $cislo = $cislo + 5;
   $pole2 = ['jmeno' => 'Jiřina', 'prijmeni' => 'Čepičková'];
+  $projectName = 'ProjectJ';
+  $counter = 1;
+
   
 ?>
   <head>
@@ -27,7 +30,7 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#"><?php echo $cislo ?></a>
+      <a class="navbar-brand" href="#"><?php echo $projectName ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -66,11 +69,20 @@
         <h1><?php echo $text?> <?php echo $pole2['jmeno'].' '.$pole2['prijmeni']?></h1>
 
        
-        <p class="lead">Jsem z toho jelen. <?php var_dump ($pole2)?><br> Uplně.</p>
+        <p class="lead">Jsem z toho jelen.<br> Uplně.</p>
          
       </div>
 
     </main><!-- /.container -->
+    
+    <div class="container">
+        <!-- new block from ukol 2 -->
+        <div class="row">
+          <div class="col-md-12">
+            <normal>Počítadlo přístupů: <?php echo $counter ?></normal>
+          </div>
+        </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
