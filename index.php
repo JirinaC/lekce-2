@@ -8,7 +8,8 @@
   $pole2 = ['jmeno' => 'Jiřina', 'prijmeni' => 'Čepičková'];
   $projectName = 'ProjectJ';
   $counter = 1;
-
+  $numbers = [0, 1, 1, 2, 3, 5, 8];
+  $pageName = 'Home';
   
 ?>
   <head>
@@ -30,7 +31,7 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#"><?php echo $projectName ?></a>
+      <a class="navbar-brand" href="#"><?php echo $projectName?>-<?php echo $pageName ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -80,6 +81,52 @@
         <div class="row">
           <div class="col-md-12">
             <normal>Počítadlo přístupů: <?php echo $counter ?></normal>
+          </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- new block from ukol 2.3 -->
+        <div class="row">
+          <div class="col-md-6">
+            <normal><?php var_dump($numbers) ?></normal>
+          </div>
+        <!-- ukol 2.home2 -->
+ <?php
+  $a = 4;
+  $b = 6;
+  $area = $a * $b;  
+  $stranaA = 6;
+  $stranaB = 6;
+  $uhelBeta = 60;
+  
+          ?>
+          <div class="col-md-6">
+            <h5>Obdélník o stranách a:<?php echo $a ?>, b:<?php echo $b ?> má obsah <?php echo $area ?>.</h5>
+          </div>
+         </div> 
+        <!-- ukol 2.home3 -->
+          <div class="row">
+          <div class="col-md-4">
+            <h4>Trojúhelník podle věty ssu</h4>
+            <h5>vstupní parametry:</h5>
+            <table border="2">
+              <tr> <td><h6>Parametr</h6></td> <td><h6>Hodnota</h6></td> </tr>
+              <tr> <td>strana A</td> <td><?php echo $stranaA ?></td> </tr>
+              <tr> <td>strana B</td> <td><?php echo $stranaB ?></td> </tr>
+              <tr> <td>úhel Beta</td> <td><?php echo $uhelBeta ?>°</td> </tr>
+            </table>
+            <h5>vlastnosti trojúhelníku:</h5>
+            <table border="2">
+              <tr> <td><h6>Parametr</h6></td> <td><h6>Hodnota</h6></td> </tr>
+              <tr> <td>strana A</td> <td><?php echo $stranaA ?></td> </tr>
+              <tr> <td>strana B</td> <td><?php echo $stranaB ?></td> </tr>
+              <tr> <td>strana C</td> <td><?php ?></td> </tr>
+              <tr> <td>úhel Alfa</td> <td><?php echo $uhelBeta ?>°</td> </tr>
+              <tr> <td>úhel Beta</td> <td><?php echo $uhelBeta ?>°</td> </tr>
+              <tr> <td>úhel Gama</td> <td><?php echo $uhelBeta ?>°</td> </tr>
+              <tr> <td>obvod</td> <td><?php echo $uhelBeta ?>°</td> </tr>
+              <tr> <td>obsah</td> <td><?php echo $uhelBeta ?>°</td> </tr>
+            </table>
           </div>
         </div>
     </div>
