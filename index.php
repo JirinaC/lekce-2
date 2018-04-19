@@ -98,7 +98,7 @@
   $stranaA = 6;
   $stranaB = 6;
   $uhelBeta = 60;
-  $stranaC = $stranaB * cos($uhelBeta);
+  $stranaC = $stranaB * cos(deg2rad($uhelBeta));
   $obvod = $stranaA + $stranaB + $stranaC;
 
   
