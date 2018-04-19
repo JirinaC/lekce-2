@@ -98,6 +98,9 @@
   $stranaA = 6;
   $stranaB = 6;
   $uhelBeta = 60;
+  $stranaC = $stranaB * cos($uhelBeta);
+  $obvod = $stranaA + $stranaB + $stranaC;
+
   
           ?>
           <div class="col-md-6">
@@ -120,12 +123,12 @@
               <tr> <td><h6>Parametr</h6></td> <td><h6>Hodnota</h6></td> </tr>
               <tr> <td>strana A</td> <td><?php echo $stranaA ?></td> </tr>
               <tr> <td>strana B</td> <td><?php echo $stranaB ?></td> </tr>
-              <tr> <td>strana C</td> <td><?php ?></td> </tr>
+              <tr> <td>strana C</td> <td><?php echo $stranaC ?></td> </tr>
               <tr> <td>úhel Alfa</td> <td><?php echo $uhelBeta ?>°</td> </tr>
               <tr> <td>úhel Beta</td> <td><?php echo $uhelBeta ?>°</td> </tr>
               <tr> <td>úhel Gama</td> <td><?php echo $uhelBeta ?>°</td> </tr>
-              <tr> <td>obvod</td> <td><?php echo $uhelBeta ?>°</td> </tr>
-              <tr> <td>obsah</td> <td><?php echo $uhelBeta ?>°</td> </tr>
+              <tr> <td>obvod</td> <td><?php echo $obvod ?></td> </tr>
+              <tr> <td>obsah</td> <td><?php  ?></td> </tr>
             </table>
           </div>
         </div>
