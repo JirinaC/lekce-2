@@ -3,24 +3,12 @@
   
   <?php
   $name = 'Kuba'; 
-  
+  require_once 'functions.php';
+  require_once 'templates.php';
   
 ?>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-
-    <title>Jirinka</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
-  </head>
+  <?=headerJira ($title)
+  ?>
 
   <body>
 
@@ -50,76 +38,57 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3"><?php if ($name == 'Jiřina' ) {
+          <h6 class="display-3"><?php if ($name == 'Jiřina' ) {
                                           echo 'čauky mňauky';
 } else {
-  echo 'Dobrý den';
+  echo 'Lekce 4';
 }
  
- ?></h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+ ?></h6>
+          
         </div>
       </div>
+<?php
+$handle = fopen("colours.txt", "r");
+$colors = [];
+if ($handle) {
+    while (!feof($handle)) {
+        $colors[] = fgets($handle);
+    }
+    fclose($handle);
+} else {
+  echo "Error: File not loaded!";
+}
+      
 
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
+?>
+       <div class="row">
+          
+    <?php foreach ($colors as $value) { 
+         ?>
+       
           <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+             <?=$value ?> 
           </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-        </div>
+        <?php }?>
+       </div>
         
         <div class="container">
-          <!-- my new container with form -->
           
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" class="form-control-file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="testselect">Test</label>
-    <select class="form-control" id="testselect">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <button type="button" class="btn btn-success">Submit</button>
-</form>
-         </div> 
+          <form method="GET" action="/lekce-2/index2.php">
+  1. Číslo:<br>
+  <input type="text" name="number1"><br>
+  2. Číslo:<br>
+  <input type="text" name="number2">
+  <input type="submit" value="Zobrazit větší">
+          </form>
+          <?php 
+          if (array_key_exists('number1', $_GET)){
+            ?>
+          <h4> <?=isHigher($_GET['number1'], $_GET['number2'])?></h4>
+         <?php }
+          ?>
+         
 
         <hr>
 
